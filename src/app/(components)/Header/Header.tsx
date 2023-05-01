@@ -6,11 +6,17 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import classes from 'Header.module.css';
 import Image from 'next/image';
 
-const staticNav = [
-  { name: 'Dashboard', href: '#', current: true },
-  { name: 'Team', href: '#', current: false },
+interface navItem {
+    name: string,
+    href: string,
+    current: boolean
+}
+
+const staticNav: navItem[] = [
+//   { name: 'Dashboard', href: '#', current: true },
+  { name: 'About', href: '#', current: false },
   { name: 'Projects', href: '#', current: false },
-  { name: 'Calendar', href: '#', current: false },
+  { name: 'Contact', href: '#', current: false },
 ]
 
 function classNames(...classes:string[]) {
@@ -19,11 +25,31 @@ function classNames(...classes:string[]) {
 
 export default function Header() {
 
-    const [navigation, setNavigation] = useState(staticNav);
+    const [navigation, setNavigation] = useState<navItem[]>(staticNav);
 
     useEffect(()=>{
         console.log(navigation);
     }, [navigation]);
+
+    function navSelect(item:navItem|undefined = undefined){
+        if (item){
+            const newNav = navigation.map((thing)=>{
+                if (thing.name === item.name){
+                    thing.current = true;
+                } else {
+                    thing.current = false;
+                }
+                return thing;
+            });
+            setNavigation(newNav);
+        } else {
+            const newNav = navigation.map((thing)=>{
+                thing.current = false;
+                return thing;
+            });
+            setNavigation(newNav);
+        }
+    }
 
 
   return (
@@ -45,13 +71,18 @@ export default function Header() {
               </div>
               <div className="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                 <div className="flex flex-shrink-0 items-center">
-                  <Image
-                    className="h-8 w-auto lg:block"
-                    src="/Logo.png"
-                    alt="Your Company"
-                    width={300}
-                    height={200}
-                  />
+                    <button>
+                        <Image
+                            className="h-8 w-auto lg:block"
+                            src="/Logo.png"
+                            alt="Your Company"
+                            width={300}
+                            height={200}
+                            onClick={()=>{
+                                navSelect();
+                            }}
+                        />
+                    </button>
                 </div>
                 <div className="hidden sm:ml-6 sm:block">
                   <div className="flex space-x-4">
@@ -65,16 +96,7 @@ export default function Header() {
                         )}
                         aria-current={item.current ? 'page' : undefined}
                         onClick={()=>{
-                            const newNav = navigation.map((thing)=>{
-                                if (thing.name === item.name){
-                                    thing.current = true;
-                                } else {
-                                    thing.current = false;
-                                }
-                                return thing;
-                                // console.log(newNav);
-                            });
-                            setNavigation(newNav);
+                            navSelect(item);
                         }}
                       >
                         {item.name}
@@ -165,6 +187,9 @@ export default function Header() {
                     'block rounded-md px-3 py-2 text-base font-medium'
                   )}
                   aria-current={item.current ? 'page' : undefined}
+                  onClick={()=>{
+                    navSelect(item);
+                  }}
                 >
                   {item.name}
                 </Disclosure.Button>
