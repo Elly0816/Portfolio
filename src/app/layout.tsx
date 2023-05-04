@@ -25,7 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" title='Eleazar Udo'>
+    <html lang="en">
+       {/* title='Eleazar Udo' */}
       {/* <body className={`${inter.className}${' '}bg-white-800 dark:bg-black-800 text-black-400 dark:text-white-400 h-screen`}> */}
       <body className={`${inter.className}${' '}h-screen`}>
         <Header Switcher={Switcher}/>

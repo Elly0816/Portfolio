@@ -1,0 +1,7 @@
+.switch:hover {
+    opacity: 1;
+}
+
+.switch {
+    opacity: 0;
+}

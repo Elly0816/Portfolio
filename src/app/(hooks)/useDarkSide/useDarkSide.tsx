@@ -1,6 +1,6 @@
 'use client';
 
-import classes from 'useDarkSide.module.css';
+import classes from './useDarkSide.module.css';
 import {useState, useEffect, Dispatch, SetStateAction, useMemo} from 'react';
 
 
@@ -22,17 +22,6 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
 
     // const [theme, setTheme] = useState<mainTheme['theme']>(null as unknown as mainTheme['theme']);
     const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') ? localStorage.getItem('theme') as mainTheme['theme'] : null as unknown as mainTheme['theme']);
-
-    // useEffect(()=>{
-    //     if (typeof window !== undefined){
-    //         setTheme(localStorage.getItem('theme') as mainTheme['theme']);
-    //     }
-    // }, []);
-
-    // const colorTheme = theme === 'dark' ? ['bg-white-800, text-black-400'] : ['dark:bg-black-800, dark:text-white-400'];
-    // const dark:Themes['theme'] = theme === 'dark' ? ['bg-white-800, text-black-400'] : ['dark:bg-black-800, dark:text-white-400'];
-    // const light:Themes['theme'] = theme !== 'dark' ?  ['dark:bg-black-800, dark:text-white-400'] : ['bg-white-800, text-black-400'];
-    // return [dark, light]
     
     const colorTheme = useMemo(():Themes['theme'][]=>{
 
@@ -63,7 +52,7 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
         root.classList.add(...colorTheme[1]);
         header.classList.add(...headerTheme[1]);
         localStorage.setItem('theme', theme);
-        console.log('theme: ', theme, 'colorTheme: ', colorTheme[1]);
+        // console.log('theme: ', theme, 'colorTheme: ', colorTheme[1]);
     }, [theme, colorTheme, headerTheme]);
 
 
