@@ -6,19 +6,9 @@ import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
 import classes from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
+import {type navItem, staticNav} from "@/app/(utilities)/NavItems";
 
-interface navItem {
-    name: string,
-    href: string,
-    current: boolean
-}
 
-const staticNav: navItem[] = [
-//   { name: 'Dashboard', href: '#', current: true },
-  { name: 'About', href: '#', current: false },
-  { name: 'Projects', href: '#', current: false },
-  { name: 'Contact', href: '#', current: false },
-]
 
 function classNames(...classes:string[]) {
   return classes.filter(Boolean).join(' ')
@@ -54,7 +44,7 @@ export default function Header({Switcher}:{Switcher:React.FC}):ReactElement {
 
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 header">
+    <Disclosure as="nav" className="bg-gray-800 header sticky top-0">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
