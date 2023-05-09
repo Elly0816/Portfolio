@@ -1,0 +1,9 @@
+.singleProject:hover {
+    top: -20px;
+    cursor: pointer;
+}
+
+.singleProject {
+    position: relative;
+    transition: top 0.5s ease-in-out;
+}
