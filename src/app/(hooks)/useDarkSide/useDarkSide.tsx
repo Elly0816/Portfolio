@@ -17,6 +17,11 @@ export interface mainTheme {
 }
 
 
+export interface projectTheme {
+    theme: ['bg-slate-100', 'text-gray-900',  'shadow-black', 'border-black']|['dark:bg-slate-800', 'dark:text-slate-100', 'shadow-white', 'border-white']
+}
+
+
 const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['theme']>>] = () => {
 
 
@@ -40,20 +45,35 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
         }
     }, [theme]);
 
+    const projectTheme = useMemo(():projectTheme['theme'][] => {
+        if (theme === 'dark'){
+            return [['bg-slate-100', 'text-gray-900',  'shadow-black', 'border-black'], ['dark:bg-slate-800', 'dark:text-slate-100', 'shadow-white', 'border-white']]
+        } else {
+            return [['dark:bg-slate-800', 'dark:text-slate-100', 'shadow-white', 'border-white'], ['bg-slate-100', 'text-gray-900',  'shadow-black', 'border-black']]
+        }
+    }, [theme]);
+
 
 
 
 
     useEffect(()=>{
         const root = window.document.documentElement.getElementsByTagName('body')[0];
-        const header = window.document.documentElement.getElementsByClassName('header')[0];        
+        const header = window.document.documentElement.getElementsByClassName('header')[0];
+        const projects = window.document.documentElement.getElementsByClassName('project');        
         root.classList.remove(...colorTheme[0]);
         header.classList.remove(...headerTheme[0]);
+        for (let i=0; i<projects.length; i++){
+            projects[i].classList.remove(...projectTheme[0]);
+        };
         root.classList.add(...colorTheme[1]);
         header.classList.add(...headerTheme[1]);
+        for (let i=0; i<projects.length; i++){
+            projects[i].classList.add(...projectTheme[1]);
+        };
         localStorage.setItem('theme', theme);
         // console.log('theme: ', theme, 'colorTheme: ', colorTheme[1]);
-    }, [theme, colorTheme, headerTheme]);
+    }, [theme, colorTheme, headerTheme, projectTheme]);
 
 
     

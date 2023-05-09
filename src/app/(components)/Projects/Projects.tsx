@@ -17,7 +17,7 @@ const Projects:React.FC = ()=>{
     return <Fragment>
             <div className={`${shrik.className} flex flex-col items-center justify-center md:text-6xl subpixel-antialiased px-7 py-20 text-2xl`} id="projects">
                 <div><h1>Projects</h1></div>
-                <div className="my-10">
+                <div className="py-10 flex flex-wrap flex-row justify-center">
                     {projects.map((project, index)=> <Project project={project} key={index}/>)}
                 </div>
             </div>
