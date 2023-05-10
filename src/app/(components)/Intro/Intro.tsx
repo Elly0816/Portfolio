@@ -36,7 +36,7 @@ const Intro:React.FC = () => {
                             <h3>{'\n'}</h3>
                             <h3>{`I create websites and applications that are fast, responsive and user-friendly.`}</h3>
                             <h3>{'\n'}</h3>
-                            <h3>{`I work with technologies like HTML, CSS, TypeScript, React, Node.js, MongoDB and more`}</h3>
+                            <h3>{`I work with technologies like HTML, CSS, TypeScript, React, Node.js, Python, MongoDB and more`}</h3>
                             <h3>{'\n'}</h3>
                             <h3>{`If you're looking for a reliable and skilled developer to work with,`}</h3>
                             <h3>{'\n'}</h3>

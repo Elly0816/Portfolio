@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
        {/* title='Eleazar Udo' */}
       {/* <body className={`${inter.className}${' '}bg-white-800 dark:bg-black-800 text-black-400 dark:text-white-400 h-screen`}> */}
-      <body className={`${inter.className}${' '}h-screen`}>
+      <body className={`${inter.className}${' '}h-screen  subpixel-antialiased `}>
         <Header Switcher={Switcher}/>
         {children}
         
