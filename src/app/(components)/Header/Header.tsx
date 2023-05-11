@@ -1,8 +1,8 @@
 'use client';
 
-import { Fragment, ReactElement, useEffect, useState } from 'react';
-import { Disclosure, Menu, Transition } from '@headlessui/react';
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { ReactElement, useState } from 'react';
+import { Disclosure } from '@headlessui/react';
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import classes from './Header.module.css';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -18,9 +18,7 @@ export default function Header({Switcher}:{Switcher:React.FC}):ReactElement {
 
     const [navigation, setNavigation] = useState<navItem[]>(staticNav);
 
-    useEffect(()=>{
-        console.log(navigation);
-    }, [navigation]);
+  
 
     function navSelect(item:navItem|undefined = undefined){
         if (item){

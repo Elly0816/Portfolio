@@ -11,22 +11,29 @@ const Switcher:React.FC = () => {
 
     const [theme, setTheme] = useDarkSide();
 
-    const [darkSide, setDarkSide] = useState(theme === 'dark' ? true : false
-    );
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(true);
 
 
     const toggleDarkMode = (checked:boolean) => {
         setTheme((value)=>{
             return value === 'light' ? 'dark' : 'light'
         });
-        setDarkSide(checked);
+        setIsDarkMode(checked);
     };
+
+    useEffect(()=>{
+        if (theme === 'dark'){
+            setIsDarkMode(true)
+        } else {
+            setIsDarkMode(false);
+        }
+    }, [theme]);
 
     
 
-    return <div title={darkSide ? 'Click for light mode' : 'Click for dark mode'}>
+    return <div title={isDarkMode ? 'Click for light mode' : 'Click for dark mode'}>
             <DarkModeSwitch
-                checked={darkSide}
+                checked={isDarkMode}
                 onChange={toggleDarkMode}
                 size={30}
             />

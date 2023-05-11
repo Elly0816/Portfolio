@@ -26,7 +26,8 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
 
 
     // const [theme, setTheme] = useState<mainTheme['theme']>(null as unknown as mainTheme['theme']);
-    const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') ? localStorage.getItem('theme') as mainTheme['theme'] : 'light');
+    // const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') ? localStorage.getItem('theme') as mainTheme['theme'] : 'dark');
+    const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') && localStorage.getItem('theme') as mainTheme['theme'] ?  localStorage.getItem('theme') as mainTheme['theme']: 'dark');
     
     const colorTheme = useMemo(():Themes['theme'][]=>{
 
@@ -52,6 +53,7 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
             return [['dark:bg-slate-800', 'dark:text-slate-100', 'shadow-white', 'border-white'], ['bg-slate-100', 'text-gray-900',  'shadow-black', 'border-black']]
         }
     }, [theme]);
+
 
 
 
