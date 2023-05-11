@@ -14,11 +14,11 @@ const Home:React.FC = ()=>{
 
 
   return <Fragment>
-    <Intro/>
-    <Projects/>
-    <Contact/>
-    <Footer/>
-  </Fragment>
+          <Intro/>
+          <Projects/>
+          <Contact/>
+          <Footer/>
+        </Fragment>
 }
 
 export default Home;
