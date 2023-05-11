@@ -42,7 +42,7 @@ export default function Header({Switcher}:{Switcher:React.FC}):ReactElement {
 
 
   return (
-    <Disclosure as="nav" className="bg-gray-800 header fixed top-0r right-0 left-0 z-50">
+    <Disclosure as="nav" className={`bg-gray-800 header fixed top-0 right-0 left-0 z-50`}>
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">

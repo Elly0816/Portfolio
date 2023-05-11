@@ -25,7 +25,7 @@ const Intro:React.FC = () => {
     
 
     return <Fragment>
-                <div id="intro" className={`${shrik.className}${' '}text-start md:text-6xl subpixel-antialiased px-7 py-20 text-2xl flex items-center justify-center`}>
+                <div id="intro" className={`${shrik.className} ${classes.intro} ${' '}text-start md:text-6xl subpixel-antialiased px-7 py-20 text-2xl flex items-center justify-center`}>
                     <div>
                         <h1>Hi!</h1>
                         <h3>{'\n'}</h3>
