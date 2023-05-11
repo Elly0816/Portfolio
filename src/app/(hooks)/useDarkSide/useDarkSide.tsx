@@ -26,7 +26,7 @@ const useDarkSide:()=>[mainTheme['theme'], Dispatch<SetStateAction<mainTheme['th
 
 
     // const [theme, setTheme] = useState<mainTheme['theme']>(null as unknown as mainTheme['theme']);
-    const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') ? localStorage.getItem('theme') as mainTheme['theme'] : null as unknown as mainTheme['theme']);
+    const [theme, setTheme] = useState<mainTheme['theme']>((typeof window !== 'undefined') ? localStorage.getItem('theme') as mainTheme['theme'] : 'light');
     
     const colorTheme = useMemo(():Themes['theme'][]=>{
 
