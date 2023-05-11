@@ -7,7 +7,7 @@ import Switcher from './(components)/Switcher/Switcher';
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata:Metadata = {
-  title: 'Eleazar Udo Portfolio',
+  title: 'Eleazar Udo',
   description: "Welcome to Eleazar Udo's portfolio website",
   icons: {
     icon: '/Logo.png',
