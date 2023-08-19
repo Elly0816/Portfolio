@@ -39,14 +39,14 @@ const Project: React.FC<{project: projectType}> = ({project}:{project:projectTyp
 
 
 
-return <div style={{backgroundImage: `url(${project.img})`}} className={`${khandFont.className} ${classes.singleProject} text-gray-800 w-96 h-96 project rounded-lg flex flex-col py-3 px-3 hover:shadow-lg my-4 mx-3 place-content-between`}>
+return <div style={{backgroundImage: `url(${project.img})`}} className={`${khandFont.className} ${classes.singleProject} text-gray-800 w-fit h-fit project rounded-lg flex flex-col py-3 px-3 hover:shadow-lg my-4 mx-3 place-content-between`}>
         <div className={`${shrik.className} text-4xl justify-center text-center ${marginInside}`}>
             <h2>{project.title}</h2>
         </div>
         {/* <div className={`text-lg  ${marginInside}`}>
             <p>{project.description}</p>
         </div> */}
-        <div className={`${classes.tools} flex-wrap flex text-base place-content-around`}>
+        <div className={`${classes.tools} flex-wrap flex text-base place-content-around w-96`}>
             {project.tools.map((tool, index) => <button type='button' className={`rounded-full py-3 px-3 text-white bg-slate-500 ${marginInside}`} key={index}>{tool}</button>)}
         </div>
         <div className={`${marginInside} flex place-content-around text-lg`}>

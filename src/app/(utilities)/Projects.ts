@@ -56,6 +56,14 @@ const projects:projectType[] = [
         demo: 'https://stalwart-douhua-1870a6.netlify.app/',
         source: "https://github.com/Elly0816/Ant-Design-Repo",
         img: 'https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg'
+    },
+    {
+        title: 'Email Like Messaging Application',
+        tools: ['TypeScript', 'React', 'Ant-Design', 'Express.js', 'Material UI','MongoDB', 'Node.js', 'Tailwind CSS'],
+        demo: 'https://dazzling-empanada-1761d8.netlify.app/',
+        source: "https://github.com/Elly0816/mail-client",
+        // img: 'https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg'
+        img: ''
     }
 
 ]
