@@ -36,22 +36,25 @@ const dimensions = {
 
 const Project: React.FC<{project: projectType}> = ({project}:{project:projectType}) => {
  
+    // text-gray-800 
 
-
-
-return <div style={{backgroundImage: `url(${project.img})`}} className={`${khandFont.className} ${classes.singleProject} text-gray-800 w-fit h-fit project rounded-lg flex flex-col py-3 px-3 hover:shadow-lg my-4 mx-3 place-content-between`}>
-        <div className={`${shrik.className} text-4xl justify-center text-center ${marginInside}`}>
+return <div style={{backgroundImage: `url(${project.img})`}} className={`${khandFont.className} ${classes.singleProject}
+${project.img && 'text-gray-800'}
+ w-fit h-fit project rounded-lg flex flex-col p-3 hover:shadow-lg my-4 mx-3 justify-center items-center`}>
+        <div className={`${shrik.className} text-4xl w-fit justify-center text-center ${marginInside}`}>
             <h2>{project.title}</h2>
         </div>
         {/* <div className={`text-lg  ${marginInside}`}>
             <p>{project.description}</p>
         </div> */}
-        <div className={`${classes.tools} flex-wrap flex text-base place-content-around w-96`}>
+        <div className={`${classes.tools} flex flex-row flex-wrap text-base place-content-around justify-center`}>
             {project.tools.map((tool, index) => <button type='button' className={`rounded-full py-3 px-3 text-white bg-slate-500 ${marginInside}`} key={index}>{tool}</button>)}
         </div>
-        <div className={`${marginInside} flex place-content-around text-lg`}>
-            {project.demo && <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full`}><Link className='flex' href={project.demo}>Demo <Image className='mx-2' {...dimensions} src='/internet.png' alt='demo site'/></Link></button>}
-            <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full`}><Link className='flex' href={project.source}>Source <Image className='mx-2' {...dimensions} src='/branches.png' alt='source code'/></Link></button>
+
+        {/* ${marginInside} */}
+        <div className={`flex flex-row text-lg`}>
+            {project.demo && <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}><Link className='flex' href={project.demo}>Demo <Image className='mx-2' {...dimensions} src='/internet.png' alt='demo site'/></Link></button>}
+            <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}><Link className='flex' href={project.source}>Source <Image className='mx-2' {...dimensions} src='/branches.png' alt='source code'/></Link></button>
         </div>
 </div>
 
