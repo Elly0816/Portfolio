@@ -1,7 +1,5 @@
 import { type projectType } from "../(components)/Project/Project";
 
-
-
 // const projects:projectType[] = [
 //     {
 //         img: '',
@@ -27,46 +25,80 @@ import { type projectType } from "../(components)/Project/Project";
 //     projects.push(proj);
 // }
 
-
-const projects:projectType[] = [
+const projects: projectType[] = [
     {
-        title: 'Chat App',
-        tools: ['JavaScript', 'React', 'NodeJS', 'ExpressJS', 'socket.io', 'mongoDB'],
+        title: "Chat App",
+        tools: [
+            "JavaScript",
+            "React",
+            "NodeJS",
+            "ExpressJS",
+            "socket.io",
+            "mongoDB",
+        ],
         demo: undefined,
-        source: 'https://github.com/Elly0816/Chat-App',
-        img: ''
+        source: "https://github.com/Elly0816/Chat-App",
+        img: "",
     },
     {
-        title: 'Online BlackJack',
-        tools: ['JavaScript', 'React', 'NodeJS', 'ExpressJS', 'socket.io', 'mongoDB'],
+        title: "Online BlackJack",
+        tools: [
+            "JavaScript",
+            "React",
+            "NodeJS",
+            "ExpressJS",
+            "socket.io",
+            "mongoDB",
+        ],
         demo: undefined,
         source: "https://github.com/Elly0816/BlackJack",
-        img: ""
+        img: "",
     },
     {
-        title: 'Face Blur',
+        title: "Face Blur",
         tools: ["Python", "JavaScript", "Flask", "OpenCV", "React"],
         demo: undefined,
         source: "https://github.com/Elly0816/Face-Recognition",
-        img: ""
+        img: "",
     },
     {
-        title: 'Live Currency Tracker',
-        tools: ['TypeScript', 'React', 'Ant-Design'],
-        demo: 'https://stalwart-douhua-1870a6.netlify.app/',
+        title: "Live Currency Tracker",
+        tools: ["TypeScript", "React", "Ant-Design"],
+        demo: "https://stalwart-douhua-1870a6.netlify.app/",
         source: "https://github.com/Elly0816/Ant-Design-Repo",
-        img: 'https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg'
+        img: "https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg",
     },
     {
-        title: 'Email-like Messaging Application',
-        tools: ['TypeScript', 'React', 'Ant-Design', 'Express.js', 'Material UI','MongoDB', 'Node.js', 'Tailwind CSS'],
-        demo: 'https://dazzling-empanada-1761d8.netlify.app/',
+        title: "Email-like Messaging Application",
+        tools: [
+            "TypeScript",
+            "React",
+            "Ant-Design",
+            "Express.js",
+            "Material UI",
+            "MongoDB",
+            "Node.js",
+            "Tailwind CSS",
+        ],
+        demo: "https://dazzling-empanada-1761d8.netlify.app/",
         source: "https://github.com/Elly0816/mail-client",
         // img: 'https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg'
-        img: ''
-    }
-
-]
-
+        img: "",
+    },
+    {
+        title: "Expense Tracking App",
+        tools: [
+            "TypeScript",
+            "React",
+            "Ant-Design",
+            "Bun",
+            "Hono",
+            "PostgreSQL",
+        ],
+        demo: "https://expense-app-client-pi.vercel.app/",
+        source: "https://github.com/Elly0816/expense-app-server",
+        img: "",
+    },
+];
 
 export default projects;

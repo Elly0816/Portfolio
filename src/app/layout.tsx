@@ -1,28 +1,35 @@
-import { Metadata } from 'next/types'
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Header from './(components)/Header/Header';
-import Switcher from './(components)/Switcher/Switcher';
+import { Metadata } from "next/types";
+import "./globals.css";
+import { Inter } from "next/font/google";
+import Header from "./(components)/Header/Header";
+import Switcher from "./(components)/Switcher/Switcher";
+import ServerComponent from "./(supabaseSessionComponents)/serverComponent";
+import { ReactNode } from "react";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
-export const metadata:Metadata = {
-  title: 'Eleazar Udo',
-  description: `Hi!
+export const metadata: Metadata = {
+    title: "Eleazar Udo",
+    description: `Hi!
   I'm Eleazar Udo
   A full-stack web developer and software engineer
   I create websites and applications that are fast, responsive and user-friendly.`,
-  icons: {
-    icon: '/Logo.png',
-    shortcut: '/Logo.png',
-    apple: '/Logo.png'
-  },
-  twitter: {card: 'summary', site: '', title: 'Eleazar Udo', description: `Hi!
+    icons: {
+        icon: "/Logo.png",
+        shortcut: "/Logo.png",
+        apple: "/Logo.png",
+    },
+    twitter: {
+        card: "summary",
+        site: "",
+        title: "Eleazar Udo",
+        description: `Hi!
   I'm Eleazar Udo
   A full-stack web developer and software engineer
-  I create websites and applications that are fast, responsive and user-friendly.`},
-
-}
+  I create websites and applications that are fast, responsive and user-friendly.`,
+    },
+    robots: "all",
+};
 
 /*
 
@@ -36,22 +43,34 @@ export const metadata:Metadata = {
 
 */
 
-
-
-export default function RootLayout({
-  children,
+export default async function RootLayout({
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="en">
-       {/* title='Eleazar Udo' */}
-      {/* <body className={`${inter.className}${' '}bg-white-800 dark:bg-black-800 text-black-400 dark:text-white-400 h-screen`}> */}
-      <body className={`${inter.className}${' '}h-screen  subpixel-antialiased `}>
-        <Header Switcher={Switcher}/>
-        {children}
-        
-      </body>
-    </html>
-  )
+    // const { data, error } = await ServerComponent();
+    // let header: ReactNode;
+
+    // if (data.session) {
+    //     header = <Header Switcher={Switcher} isAuth={data?.session && true} />;
+    // } else {
+    //     header = <Header Switcher={Switcher} />;
+    // }
+
+    return (
+        <html lang="en">
+            {/* title='Eleazar Udo' */}
+            {/* <body className={`${inter.className}${' '}bg-white-800 dark:bg-black-800 text-black-400 dark:text-white-400 h-screen`}> */}
+            <body
+                className={`${
+                    inter.className
+                }${" "}h-screen  subpixel-antialiased `}
+            >
+                <Header Switcher={Switcher} />
+
+                {/* {header} */}
+                <div className="layout">{children}</div>
+            </body>
+        </html>
+    );
 }
