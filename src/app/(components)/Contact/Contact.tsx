@@ -168,7 +168,7 @@ const Contact: React.FC = () => {
                             await handleSubmit();
                         }}
                         disabled={canSubmit ? false : true}
-                        className={`${classes.submit} md:text-lg text-sm py-5 px-5 text-slate-500 bg-gray-100 rounded-full`}
+                        className={`${classes.submit} md:text-lg text-sm py-5 px-5 text-slate-500 bg-gray-100 rounded-full w-64`}
                     >
                         Send
                     </button>

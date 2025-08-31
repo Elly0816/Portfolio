@@ -1,65 +1,173 @@
-import Link from 'next/link';
-import classes from'./Project.module.css';
-import { Khand, Shrikhand } from 'next/font/google';
-import Image from 'next/image';
+import Link from "next/link";
+import classes from "./Project.module.css";
+import { Khand, Shrikhand, Inter } from "next/font/google";
+import Image from "next/image";
+import { Url } from "next/dist/shared/lib/router/router";
 
 export interface projectType {
     img: string;
     tools: string[];
     source: string;
-    demo:string|undefined;
-    title:string;
+    demo: string | undefined;
+    title: string;
     // description:string;
 }
 
 const khandFont = Khand({
     weight: "300",
-    style: 'normal',
-    subsets: ['latin']
+    style: "normal",
+    subsets: ["latin"],
 });
 
+const interFont = Inter({
+    weight: ["100", "200"],
+    style: "normal",
+    subsets: ["latin"],
+});
 
 const shrik = Shrikhand({
-    weight: '400',
-    style: 'normal',
-    subsets: ['latin']
+    weight: "400",
+    style: "normal",
+    subsets: ["latin"],
 });
 
-
-
-const marginInside = 'my-3 mx-3';
+const marginInside = "my-3 mx-3";
 
 const dimensions = {
-    width: 25,
-    height: 20,
-}
+    width: 15,
+    height: 15,
+};
 
-const Project: React.FC<{project: projectType}> = ({project}:{project:projectType}) => {
- 
-    // text-gray-800 
+const Project: React.FC<{ project: projectType }> = ({
+    project,
+}: {
+    project: projectType;
+}) => {
+    // text-gray-800
 
-return <div style={{backgroundImage: `url(${project.img})`}} className={`${khandFont.className} ${classes.singleProject}
-${project.img && 'text-gray-800'}
- w-fit h-fit project rounded-lg flex flex-col p-3 hover:shadow-lg my-4 mx-3 justify-center items-center`}>
-        <div className={`${shrik.className} text-4xl w-fit justify-center text-center ${marginInside}`}>
-            <h2>{project.title}</h2>
+    return (
+        <div
+            className={`${khandFont.className} ${classes.singleProject} 
+${project.img && "text-gray-800"}
+ w-11/12 lg:w-3/4 h-1/5  project rounded-lg flex flex-col hover:shadow-lg justify-center items-center py-2`}
+        >
+            <div
+                style={{
+                    backgroundImage: `url(${project.img})`,
+                    backgroundSize: "cover",
+                    backgroundRepeat: "no-repeat",
+                }}
+                className={`h-40 w-full ${classes.imageContainer}`}
+            ></div>
+            <div
+                className={`${shrik.className} lg:text-2xl text-xs w-full px-2 justify-between text-center ${marginInside} flex flex-row gap-9 `}
+            >
+                <h2 className={`justify-self-start`}>{project.title}</h2>
+
+                <div
+                    className={`gap-2 flex flex-row text-xs lg:text-base flex-wrap ${khandFont.className}`}
+                >
+                    {project.tools.map((tool, index) => (
+                        <span key={index}>{tool}</span>
+                    ))}
+                </div>
+            </div>
+            <div
+                className={`${interFont.className} text-xs lg:text-base flex flex-row`}
+            >
+                <button
+                    type="button"
+                    className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}
+                >
+                    <Link passHref legacyBehavior href={project.source}>
+                        <a
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="flex"
+                        >
+                            Source{" "}
+                            <Image
+                                className="mx-2"
+                                {...dimensions}
+                                src="/branches.png"
+                                alt="source code"
+                            />
+                        </a>
+                    </Link>
+                </button>
+                {project.demo && (
+                    <button
+                        type="button"
+                        className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}
+                    >
+                        <Link passHref legacyBehavior href={project.demo}>
+                            <a
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex"
+                            >
+                                Demo{" "}
+                                <Image
+                                    className="mx-2"
+                                    {...dimensions}
+                                    src="/internet.png"
+                                    alt="demo site"
+                                />
+                            </a>
+                        </Link>
+                    </button>
+                )}
+            </div>
+            {/* <div
+                className={`${classes.tools} flex flex-row flex-wrap text-base place-content-around justify-center`}
+            >
+                {project.tools.map((tool, index) => (
+                    <button
+                        type="button"
+                        className={`rounded-full py-3 px-3  bg-slate-500 ${marginInside}`}
+                        key={index}
+                    >
+                        {tool}
+                    </button>
+                ))}
+            </div> */}
+
+            {/* ${marginInside} */}
+            {/* <div className={`flex flex-row text-lg`}>
+                {project.demo && (
+                    <button
+                        type="button"
+                        className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}
+                    >
+                        <Link className="flex" href={project.demo}>
+                            Demo{" "}
+                            <Image
+                                className="mx-2"
+                                {...dimensions}
+                                src="/internet.png"
+                                alt="demo site"
+                            />
+                        </Link>
+                    </button>
+                )}
+                <button
+                    type="button"
+                    className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}
+                >
+                    <Link className="flex" href={project.source}>
+                        Source{" "}
+                        <Image
+                            className="mx-2"
+                            {...dimensions}
+                            src="/branches.png"
+                            alt="source code"
+                        />
+                    </Link>
+                </button>
+            </div> */}
         </div>
-        {/* <div className={`text-lg  ${marginInside}`}>
-            <p>{project.description}</p>
-        </div> */}
-        <div className={`${classes.tools} flex flex-row flex-wrap text-base place-content-around justify-center`}>
-            {project.tools.map((tool, index) => <button type='button' className={`rounded-full py-3 px-3 text-white bg-slate-500 ${marginInside}`} key={index}>{tool}</button>)}
-        </div>
-
-        {/* ${marginInside} */}
-        <div className={`flex flex-row text-lg`}>
-            {project.demo && <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}><Link className='flex' href={project.demo}>Demo <Image className='mx-2' {...dimensions} src='/internet.png' alt='demo site'/></Link></button>}
-            <button type='button' className={`${classes.links} text-slate-500 bg-gray-100 rounded-full mx-2`}><Link className='flex' href={project.source}>Source <Image className='mx-2' {...dimensions} src='/branches.png' alt='source code'/></Link></button>
-        </div>
-</div>
-
-}
-
+    );
+};
 
 export default Project;
 

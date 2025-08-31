@@ -155,7 +155,7 @@ export default function Header({ Switcher }: headerType): ReactElement {
                                         {
                                             //** TODO: Add a logout and login button here */
                                         }
-                                        {!isAuth && (
+                                        {/* {!isAuth && (
                                             <HeaderLink
                                                 initialItem={{
                                                     name: "Login",
@@ -184,7 +184,7 @@ export default function Header({ Switcher }: headerType): ReactElement {
                                             // >
                                             //     Logout
                                             // </button>
-                                        )}
+                                        )} */}
                                         {/* <button></button> */}
                                     </div>
                                 </div>
