@@ -1,6 +1,6 @@
 "use client";
 
-import { ChangeEvent, Fragment, useRef, useState } from "react";
+import { ChangeEvent, Fragment, useEffect, useRef, useState } from "react";
 import classes from "./Contact.module.css";
 import { Khand, Shrikhand } from "next/font/google";
 import emailjs from "@emailjs/browser";
@@ -93,6 +93,15 @@ const Contact: React.FC = () => {
         }
     }
 
+    // const [show, setShow] = useState<boolean>(true);
+    // useEffect(() => {
+    //     const interval = setInterval(() => {
+    //         setShow((show) => !show);
+    //     }, 500);
+
+    //     return () => clearInterval(interval);
+    // }, [show]);
+
     return (
         <Fragment>
             <div
@@ -102,26 +111,31 @@ const Contact: React.FC = () => {
                 <div>
                     <h3>Contact Me</h3>
                 </div>
-                {status && (
-                    <div
-                        className={`${khandFont.className} my-3 text-lg flex w-1/3 justify-center items-center`}
-                    >
-                        <Image
-                            className="mx-3"
-                            height={20}
-                            width={20}
-                            src={
-                                status === "success"
-                                    ? "/success.png"
-                                    : "/failure.png"
-                            }
-                            alt={status === "success" ? "success" : "failure"}
-                        />{" "}
-                        <span>
-                            {status === "success" ? "success" : "failure"}
-                        </span>
-                    </div>
-                )}
+                {/* {status && ( */}
+                <div
+                    className={`${khandFont.className} my-3 text-lg flex w-1/3 justify-center items-center h-5`}
+                >
+                    {status && (
+                        <>
+                            <Image
+                                className="mx-3"
+                                height={20}
+                                width={20}
+                                src={
+                                    status === "success"
+                                        ? "/success.png"
+                                        : "/failure.png"
+                                }
+                                alt={
+                                    status === "success" ? "success" : "failure"
+                                }
+                            />{" "}
+                            <span>
+                                {status === "success" ? "success" : "failure"}
+                            </span>
+                        </>
+                    )}
+                </div>
                 <div
                     className={`${khandFont.className} w-2/3 md:text-2xl text-sm py-10 flex flex-col justify-center items-center`}
                 >
