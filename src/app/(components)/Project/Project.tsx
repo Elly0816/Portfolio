@@ -49,15 +49,16 @@ const Project: React.FC<{ project: projectType }> = ({
         <div
             className={`${khandFont.className} ${classes.singleProject} 
 ${project.img && "text-gray-800"}
- w-full lg:w-3/4 h-1/4 lg:h-96 project rounded-lg flex flex-col hover:shadow-lg justify-center items-center `}
+ w-full lg:w-3/4 h-60 lg:h-96 project rounded-lg flex flex-col hover:shadow-lg justify-center items-center overflow-hidden`}
         >
             <div
                 style={{
                     backgroundImage: `url(${project.img})`,
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
                 }}
-                className={`h-4/5 w-full ${classes.imageContainer}`}
+                className={`h-4/5 w-full ${classes.imageContainer} overflow-hidden`}
             ></div>
             <div
                 className={`${shrik.className} lg:text-2xl text-xs w-full px-2 justify-between text-center ${marginInside} flex flex-row gap-9 h-1/5
