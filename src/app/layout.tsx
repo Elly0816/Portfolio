@@ -61,7 +61,7 @@ export default async function RootLayout({
         <html lang="en">
             {/* title='Eleazar Udo' */}
             {/* <body className={`${inter.className}${' '}bg-white-800 dark:bg-black-800 text-black-400 dark:text-white-400 h-screen`}> */}
-            <body className={`${inter.className}  subpixel-antialiased `}>
+            <body className={`${inter.className}  subpixel-antialiased`}>
                 <Header Switcher={Switcher} />
 
                 {/* {header} */}

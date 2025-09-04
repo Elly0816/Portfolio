@@ -49,7 +49,7 @@ const Project: React.FC<{ project: projectType }> = ({
         <div
             className={`${khandFont.className} ${classes.singleProject} 
 ${project.img && "text-gray-800"}
- w-11/12 lg:w-3/4 h-1/5  project rounded-lg flex flex-col hover:shadow-lg justify-center items-center py-2`}
+ w-full lg:w-3/4 h-1/4 lg:h-96 project rounded-lg flex flex-col hover:shadow-lg justify-center items-center `}
         >
             <div
                 style={{
@@ -57,19 +57,26 @@ ${project.img && "text-gray-800"}
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
                 }}
-                className={`h-40 w-full ${classes.imageContainer}`}
+                className={`h-4/5 w-full ${classes.imageContainer}`}
             ></div>
             <div
-                className={`${shrik.className} lg:text-2xl text-xs w-full px-2 justify-between text-center ${marginInside} flex flex-row gap-9 `}
+                className={`${shrik.className} lg:text-2xl text-xs w-full px-2 justify-between text-center ${marginInside} flex flex-row gap-9 h-1/5
+                //  overflow-hidden
+                 `}
             >
                 <h2 className={`justify-self-start`}>{project.title}</h2>
 
-                <div
-                    className={`gap-2 flex flex-row text-xs lg:text-base flex-wrap ${khandFont.className}`}
-                >
-                    {project.tools.map((tool, index) => (
-                        <span key={index}>{tool}</span>
-                    ))}
+                <div className="whitespace-nowrap overflow-hidden">
+                    <div
+                        className={`gap-2 flex flex-row text-xs lg:text-base ${khandFont.className}
+                    ${classes.marquee} inline-block
+                    `}
+                        // flex-wrap
+                    >
+                        {project.tools.map((tool, index) => (
+                            <span key={index}>{tool}</span>
+                        ))}
+                    </div>
                 </div>
             </div>
             <div

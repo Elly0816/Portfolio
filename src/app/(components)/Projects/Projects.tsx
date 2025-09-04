@@ -27,10 +27,13 @@ const Projects: React.FC = () => {
             </div>
             {/* <Carousel className="w-full max-w-xs"> */}
             <Carousel
-                className="w-full max-w-6xl mt-3"
-                opts={{ align: "center" }}
+                className="w-8/12 mt-3"
+                opts={{ align: "center", loop: true }}
             >
-                <CarouselContent className="flex px-4 mt-5 mb-4">
+                <CarouselContent
+                    // className="flex px-4 mt-5 mb-4"
+                    className="mt-5 mb-4"
+                >
                     {projects.map((project, index) => (
                         <CarouselItem
                             key={project.title ?? index}

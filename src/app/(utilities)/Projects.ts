@@ -38,7 +38,7 @@ const projects: projectType[] = [
         ],
         demo: undefined,
         source: "https://github.com/Elly0816/Chat-App",
-        img: "",
+        img: "https://img.itch.zone/aW1nLzU2MTA3NTUucG5n/original/tcdxAa.png",
     },
     {
         title: "Online BlackJack",
@@ -52,14 +52,14 @@ const projects: projectType[] = [
         ],
         demo: undefined,
         source: "https://github.com/Elly0816/BlackJack",
-        img: "",
+        img: "https://media.istockphoto.com/id/156986944/photo/splitting-in-blackjack.webp?b=1&s=612x612&w=0&k=20&c=WhC5lJMO18JJ7rsPTI5vPVgefEI511KWNOzuJ0L2U08=",
     },
     {
         title: "Face Blur",
         tools: ["Python", "JavaScript", "Flask", "OpenCV", "React"],
         demo: undefined,
         source: "https://github.com/Elly0816/Face-Recognition",
-        img: "",
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0iofEt5pMNQLhbjv-YIaxQVpfUUFk-Xc5UQ&s",
     },
     {
         title: "Live Currency Tracker",
@@ -84,7 +84,7 @@ const projects: projectType[] = [
         demo: "https://dazzling-empanada-1761d8.netlify.app/",
         source: "https://github.com/Elly0816/mail-client",
         // img: "https://raw.githubusercontent.com/Elly0816/Ant-Design-Repo/master/public/images/Currencies.jpeg",
-        img: "",
+        img: "https://yes-himconsulting.com/wp-content/uploads/2020/04/mail.webp",
     },
     {
         title: "Expense Tracking App",
@@ -98,7 +98,7 @@ const projects: projectType[] = [
         ],
         demo: "https://expense-app-client-pi.vercel.app/",
         source: "https://github.com/Elly0816/expense-app-server",
-        img: "",
+        img: "https://poonawallafincorp.com/documents/d/poonawalla-fincorp/loan-for-job-expenses-webp?download=true",
     },
 ];
 

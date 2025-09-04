@@ -31,45 +31,57 @@ const Intro: React.FC = () => {
                 id="intro"
                 className={`${shrik.className} ${
                     classes.intro
-                } ${" "}text-start md:text-6xl subpixel-antialiased px-7 py-20 text-2xl flex items-center justify-center`}
+                } ${" "}text-start md:text-6xl subpixel-antialiased lg:px-7 px-3.5 lg:py-20 py-10 text-2xl flex items-center justify-center`}
             >
                 <div className="w-4/6">
                     <h1>Hi!</h1>
                     <h3>{"\n"}</h3>
                     {/* <h1>{"I'm Eleazar Udo"}</h1> */}
-                    <Typewriter
-                        onInit={(typewriter) => {
-                            typewriter
-                                .typeString("I'm Eleazar Udo")
-                                .pauseFor(2500)
-                                .deleteChars(11)
-                                .typeString("a Software Engineer")
-                                .pauseFor(2500)
-                                .deleteChars(17)
-                                .typeString("problem solver")
-                                .pauseFor(2500)
-                                .start();
-                        }}
-                        options={{
-                            loop: true,
-                            // autoStart: true,
-                        }}
-                    />
-                    <h3>{"\n"}</h3>
+                    <div className="h-16">
+                        <Typewriter
+                            onInit={(typewriter) => {
+                                typewriter
+                                    .typeString("I'm Eleazar Udo")
+                                    .pauseFor(2500)
+                                    .deleteChars(11)
+                                    .typeString("a Software Engineer")
+                                    .pauseFor(2500)
+                                    .deleteChars(17)
+                                    .typeString("problem solver")
+                                    .pauseFor(2500)
+                                    .start();
+                            }}
+                            options={{
+                                loop: true,
+                                cursor: "",
+                                // autoStart: true,
+                            }}
+                        />
+                    </div>
+                    {/* <h3>{"\n"}</h3> */}
                     <div
                         className={`py-5 ${cat.className} text-sm md:text-2xl`}
                     >
-                        <h3>{`A full-stack web developer and software engineer`}</h3>
-                        <h3>{"\n"}</h3>
+                        <span className="">
+                            A full-stack developer passionate about crafting
+                            fast, responsive, and user-friendly web
+                            applications. I thrive on solving real-world
+                            problems with clean code and scalable architecture.
+                            Curious about what I’ve built? Scroll down to
+                            explore my projects or get in touch. I’m always open
+                            to exciting collaborations.
+                        </span>
+                        {/* <h3>{`A full-stack web developer and software engineer`}</h3> */}
+                        {/* <h3>{"\n"}</h3>
                         <h3>{`I create websites and applications that are fast, responsive and user-friendly.`}</h3>
                         <h3>{"\n"}</h3>
                         <h3>{`I work with technologies like HTML, CSS, TypeScript, React, Node.js, Python, MongoDB and more`}</h3>
                         <h3>{"\n"}</h3>
                         <h3>{`If you're looking for a reliable and skilled developer to work with,`}</h3>
                         <h3>{"\n"}</h3>
-                        <h3>{`feel free to check out my portfolio or get in touch with me.`}</h3>
+                        <h3>{`feel free to check out my portfolio or get in touch with me.`}</h3> */}
                     </div>
-                    <div className={`flex flex-row text-current`}>
+                    <div className={`flex flex-row text-current mt-7`}>
                         <Link
                             title="Eleazar's Github"
                             className="mx-3"
@@ -81,6 +93,7 @@ const Intro: React.FC = () => {
                                 alt={"Eleazar's Github link"}
                                 width={dimensions}
                                 height={dimensions}
+                                className="w-2/3"
                             ></Image>
                         </Link>
                         <Link
@@ -94,6 +107,7 @@ const Intro: React.FC = () => {
                                 alt={"Eleazar's LinkedIn link"}
                                 width={dimensions}
                                 height={dimensions}
+                                className="w-2/3"
                             ></Image>
                         </Link>
                         <Link
@@ -107,6 +121,7 @@ const Intro: React.FC = () => {
                                 alt={"Eleazar's X link"}
                                 width={dimensions}
                                 height={dimensions}
+                                className="w-2/3"
                             ></Image>
                         </Link>
                     </div>

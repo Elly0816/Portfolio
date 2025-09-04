@@ -1,6 +1,13 @@
 .submit:hover {
     color: white;
     background-color: green;
-    box-shadow: 10px 5px 5px white;
+    box-shadow: 10px 5px 5px gray;
     cursor: pointer;
+}
+
+.submit {
+    /* top: 12px; */
+    box-shadow: none;
+    transition: box-shadow 0.3s ease-in-out;
+    transition: background-color 0.3s ease-in-out;
 }

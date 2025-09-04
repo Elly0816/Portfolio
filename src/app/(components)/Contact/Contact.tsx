@@ -182,7 +182,7 @@ const Contact: React.FC = () => {
                             await handleSubmit();
                         }}
                         disabled={canSubmit ? false : true}
-                        className={`${classes.submit} md:text-lg text-sm py-5 px-5 text-slate-500 bg-gray-100 rounded-full w-64`}
+                        className={`${classes.submit} md:text-lg text-sm py-5 px-5 text-slate-500 bg-gray-100 rounded-full lg:w-64 w-20 self-end submit`}
                     >
                         Send
                     </button>
